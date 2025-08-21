@@ -2,8 +2,10 @@ const express = require('express');
 require('dotenv').config();
 const authRoutes = require('./routes/authRoutes');
 const connectDB = require('./db'); 
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const app = express();
+app.use(cookieParser());
 const PORT =process.env.PORT || 3000;
 
 app.use(express.json());
